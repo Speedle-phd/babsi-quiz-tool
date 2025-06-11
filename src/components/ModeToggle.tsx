@@ -7,10 +7,18 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { Moon, Sun } from 'lucide-react'
 import { useTheme } from './theme-provider'
-const ModeToggle = () => {
+import { cn } from '@/lib/utils'
+type Props = {
+   className?: string
+}
+const ModeToggle = ({className} : Props) => {
    const { setTheme } = useTheme()
    return (
-      <aside className="absolute right-4 top-4 z-50 border-2 border-brand rounded-sm">
+      <aside
+         className={cn(
+            'absolute right-4 top-4 z-50 border-2 border-brand rounded-sm', className
+         )}
+      >
          <DropdownMenu>
             <DropdownMenuTrigger asChild>
                <Button variant='outline' size='icon'>

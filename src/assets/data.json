@@ -1,24 +1,192 @@
 {
    "questions": [
       {
-         "question": "What is the capital of France?",
+         "id": 1,
+         "points": 1,
+
+         "type": "multiple-choice",
+         "question": "Welche drei Bänder sind mit Multi-Layer-Technologie ausgestattet?",
          "options": [
-            "Berlin",
-            "Madrid",
-            "Paris",
-            "Rome"
+            "TP650",
+            "TP655",
+            "TP652",
+            "TP600",
+            "TP654",
+            "TP690",
+            "TP670"
          ],
-         "answer": "Paris"
+         "answer": [
+            
+            "TP650",
+            "TP655",
+            "TP654"
+         ]
       },
       {
-         "question": "What is 2 + 2?",
+         "id": 2,
+         "points": 1,
+
+         "type": "multiple-choice",
+         "question": "Welche Anforderungen decken die i3 ProSysteme ab?",
          "options": [
-            "3",
-            "4",
-            "5",
-            "6"
+            "Schallschutz",
+            "Einbruchschutz",
+            "Sanierung",
+            "Absturzsicherung",
+            "Vorwandmontage Fenster",
+            "Große Elemente",
+            "Große Fugen",
+            "Schnelle Abdichtung",
+            "Monolithische Fassadenfuge"
          ],
-         "answer": "4"
+         "answer": [
+            
+            "Schallschutz",
+            "Einbruchschutz",
+            "Sanierung",
+            "Vorwandmontage Fenster",
+            "Große Elemente",
+            "Große Fugen",
+            "Schnelle Abdichtung"
+         ]
+      },
+      {
+         "id": 3,
+         "points": 1,
+
+         "type": "single-choice",
+         "question": "Wie viele Produkte der Marke illbruck sind im DGNB Navigator gelistet?",
+         "options": ["36", "19", "45"],
+         "answer": ["36"]
+         
+      },
+      {
+         "id": 4,
+         "points": 1,
+
+         "type": "multiple-choice",
+         "question": "Welche Produkte gehören zum illbruck Perimeter Anschlussflansch Abdichtungssystem?",
+         "options": [
+            "SP351 Fenster-Montagekleber",
+            "TP654 Trio-Funktionsband ML-Tech Pro",
+            "ME501 TwinAktiv HI",
+            "OS925 Flexible Abdichtungsbeschichtung",
+            "SP525 Hochbaufugen Dichtstoff"
+         ],
+         "answer": [
+            
+            "SP351 Fenster-Montagekleber",
+            "TP654 Trio-Funktionsband ML-Tech Pro",
+            "ME501 TwinAktiv HI",
+            "OS925 Flexible Abdichtungsbeschichtung"
+         ]
+      },
+      {
+         "id": 5,
+         "points": 1,
+
+         "type": "text",
+         "question": "Welche sieben Produktmarken gehören zu Tremco CPG Europe? Mit dem Tremco Markenportfolio bieten wir Lösungen für alle sechs Seiten eines Gebäudes.",
+         "options": [
+            
+         ],
+         "answer": [
+            
+            "Tremco",
+            "illbruck",
+            "Flowcrete",
+            "Vandex",
+            "Nullifire",
+            "Nudura",
+            "Dryvit"
+         ]
+      },
+      {
+         "id": 6,
+         "points": 1,
+
+         "type": "text",
+         "question": "Beim PR150 Riegel aus dem SY002 Vorwandmontage-System SMART sind die Bohr- und Schraubmarkierung als Montagehilfen vorgebohrt. In welchem Abstand in cm?",
+         "options": [],
+         "answer": ["10"]
+         
+      },
+      {
+         "id": 7,
+         "points": 1,
+
+         "type": "single-choice",
+         "question": "Welcher illbruck PU-Schaum hat mit 30% die größte Dehnfähigkeit?",
+         "options": [
+            "FM210 Füll- und Dämmschaum Plus",
+            "FM230 Fenster- und Fassadenschaum Plus",
+            "FM710 2K Montageschaum Plus"
+         ],
+         "answer": ["FM230 Fenster- und Fassadenschaum Plus"]
+         
+      },
+      {
+         "id": 8,
+         "points": 1,
+
+         "type": "multiple-choice",
+         "question": "Welche Seminare bietet die Marke illbruck an?",
+         "options": [
+            "Grundlagenseminare",
+            "TÜV-zertifizierter Montageleiter Fenster & Haustüren",
+            "Mannschafts-Fitness-Training",
+            "RAL-qualifizierter Fachmonteur Fugenabdichtung an Fenstern und Haustüren",
+            "Webinare"
+         ],
+         "answer": [
+            
+            "Grundlagenseminare",
+            "TÜV-zertifizierter Montageleiter Fenster & Haustüren",
+            "RAL-qualifizierter Fachmonteur Fugenabdichtung an Fenstern und Haustüren",
+            "Webinare"
+         ]
+      },
+
+      {
+         "id": 9,
+         "points": 1,
+
+         "type": "multiple-choice",
+         "question": "Welche Leistungen können Sie als i_connect Premium Partner in Anspruch nehmen?",
+         "options": [
+            "Montage-Handbuch",
+            "Unterstützung Planungsteam",
+            "Torwart-Training",
+            "illbruck Prämienshop",
+            "Baustellen-Einweisung"
+         ],
+         "answer": [
+            
+            "Montage-Handbuch",
+            "Unterstützung Planungsteam",
+            "illbruck Prämienshop",
+            "Baustellen-Einweisung"
+         ]
+      },
+      {
+         "id": 10,
+         "points": 1,
+
+         "type": "single-choice",
+         "question": "Wie viele illbruck Produkte haben das Zeichen QNG ready?",
+         "options": ["45", "28", "12"],
+         "answer": ["45"]
+         
+      },
+      {
+         "id": 11,
+         "points": 1,
+
+         "type": "single-choice",
+         "question": "Wie viele Unternehmen gehören zum i_connect Partner-Netzwerk?",
+         "options": ["65", "136", "374"],
+         "answer": ["136"]
+         
       }
    ]
 }
