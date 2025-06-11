@@ -4,8 +4,10 @@ function App() {
    
    return (
       <ThemeProvider>
-         
          <ModeToggle />
+         
+         
+         <h1 className="text-brand">Hey Babsi</h1>
 
       </ThemeProvider>
    )
