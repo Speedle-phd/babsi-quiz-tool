@@ -15,34 +15,66 @@ import {
 import { Checkbox } from './ui/checkbox'
 import { Button } from './ui/button'
 import { useQuiz } from '@/context/QuizContext'
+import React, { useEffect, useRef } from 'react'
 const formSchema = z.object({
    answers: z.array(z.string()).refine((value) => value.some((item) => item), {
       message: 'Bitte wählen Sie mindestens eine Option aus.',
    }),
 })
 
-const MultipleChoice = ({ options, answer, points }: QuestionTypeProps) => {
+const MultipleChoice = ({ options, answer, points, showNext, ref }: QuestionTypeProps) => {
+   // const submitRef = React.useRef<HTMLButtonElement>(null)
    const form = useForm<z.infer<typeof formSchema>>({
       resolver: zodResolver(formSchema),
       defaultValues: {
          answers: [],
       }
    })
-   const {addPoints, removePoints} = useQuiz()
+
+   const refs = useRef(
+      Array.from({ length: options!.length }, () => React.createRef<HTMLButtonElement>())
+   )
+
+   useEffect(() => {
+      refs.current = []
+      options?.forEach(() => {
+         refs.current.push(React.createRef<HTMLButtonElement>())
+      })
+   })
+
+   const {addPoints, removePoints, setAnsweredQuestions} = useQuiz()
    const onSubmit = (values: z.infer<typeof formSchema>) => {
-      
+      setAnsweredQuestions()
       const {answers} = values
-      answer?.forEach((item) => {
-         if (answers.includes(item)) {
+      answers?.forEach((item) => {
+         if (answer?.includes(item)) {
             addPoints(points || 0)
          } else {
             removePoints(points || 0)
          }
       })
-
-
+      if (ref.current) {
+         ref.current.disabled = true
+         ref.current.classList.add('opacity-50', 'cursor-not-allowed')
+      }
+      refs.current.forEach((ref) => {
+         if (ref.current) {
+            ref.current.disabled = true
+            const option = ref.current.nextElementSibling?.nextElementSibling?.textContent
+            if (option && answer?.includes(option)) {
+               ref.current.parentElement?.classList.add('right-choice')
+            } else {
+               ref.current.parentElement?.classList.add('wrong-choice')
+            }
+         }
+      })
+      showNext!()
+      
+      
    }
-
+   useEffect(() => {
+      form.resetField("answers")
+   },[options, form])
    return (
       <Form {...form}>
          <form onSubmit={form.handleSubmit(onSubmit)} className="grid w-full gap-6">
@@ -65,6 +97,8 @@ const MultipleChoice = ({ options, answer, points }: QuestionTypeProps) => {
                                  >
                                     <FormControl>
                                        <Checkbox
+                                          className="check:bg-brand"
+                                          ref={refs.current[options.indexOf(item)]}
                                           checked={field.value?.includes(item)}
                                           onCheckedChange={(checked) => {
                                              return checked
@@ -93,7 +127,7 @@ const MultipleChoice = ({ options, answer, points }: QuestionTypeProps) => {
                   </FormItem>
                )}
             />
-            <Button type='submit' className="bg-brand">Abschicken</Button>
+            <Button type='submit' className="bg-brand cursor-pointer" ref={ref}>Abschicken</Button>
          </form>
       </Form>
    )

@@ -146,4 +146,17 @@
    body {
       @apply bg-background text-foreground;
    }
+   [data-state="checked"]{
+      @apply bg-brand
+   }
+
+}
+
+@layer utilities{
+   .right-choice{
+      @apply border-2 border-brand bg-brand/10;
+   }
+   .wrong-choice{
+      @apply border-2 border-destructive bg-destructive/10;
+   }
 }

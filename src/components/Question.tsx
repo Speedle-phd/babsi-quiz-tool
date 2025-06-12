@@ -13,18 +13,35 @@ type Props = {
       options: string[]
       answer: string[]
    }
+   showNext: () => void
+   ref: React.RefObject<HTMLButtonElement | null>
 }
 
-const Question = ({ quiz }: Props) => {
+const Question = ({ ref, quiz, showNext }: Props) => {
    const { id, question, options, answer, type, points } = quiz
    return (
-      <div data-id={id} className="flex flex-col items-center justify-center">
-
-            <h2 className="text-xl">{question}</h2>
-            <Separator className="my-4" />
-            {type === 'single-choice' ? <SingleChoice options={options} answer={answer} points={points} /> : type === 'multiple-choice' ? <MultipleChoice options={options} answer={answer} points={points} /> : <TextQuestion />}
-
-
+      <div data-id={id} className='flex flex-col items-center justify-center'>
+         <h2 className='text-xl'>{question}</h2>
+         <Separator className='my-4' />
+         {type === 'single-choice' ? (
+            <SingleChoice
+               ref={ref}
+               showNext={showNext}
+               options={options}
+               answer={answer}
+               points={points}
+            />
+         ) : type === 'multiple-choice' ? (
+            <MultipleChoice
+               ref={ref}
+               showNext={showNext}
+               options={options}
+               answer={answer}
+               points={points}
+            />
+         ) : (
+            <TextQuestion />
+         )}
       </div>
    )
 }

@@ -2,6 +2,8 @@ export type QuestionTypeProps = {
    options?: string[]
    answer?: string[]
    points?: number
+   showNext: () => void
+   ref: React.RefObject<HTMLButtonElement | null>
 }
 
 export type QuizType =
