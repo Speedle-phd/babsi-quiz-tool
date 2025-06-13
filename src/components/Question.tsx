@@ -40,7 +40,13 @@ const Question = ({ ref, quiz, showNext }: Props) => {
                points={points}
             />
          ) : (
-            <TextQuestion />
+            <TextQuestion
+               ref={ref}
+               showNext={showNext}
+               options={options}
+               answer={answer}
+               points={points}
+            />
          )}
       </div>
    )
