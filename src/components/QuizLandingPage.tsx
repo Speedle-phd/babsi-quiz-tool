@@ -8,10 +8,12 @@ import {
 import { Separator } from '@/components/ui/separator'
 import { CardContent, CardHeader } from '@/components/ui/card'
 import Accent from './Accent'
-import { Link } from 'react-router'
+import { Link, useLocation } from 'react-router'
 import { Button } from './ui/button'
 
 const QuizLandingPage = () => {
+   const location = useLocation()
+   console.log(location)
    return (
       <>
          <CardHeader className='text-center text-2xl font-bold'>

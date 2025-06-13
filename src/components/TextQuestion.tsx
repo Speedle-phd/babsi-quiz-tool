@@ -72,7 +72,7 @@ const TextQuestion = ({
 
       refs.current.forEach((ref) => {
          if (ref.current) {
-            
+            // ref.current.disabled = true
             const inputValue = ref.current.value.trim().toLowerCase()
             if (correctAnswers.includes(inputValue)) {
                ref.current.classList.add('right-choice')

@@ -8,6 +8,8 @@ import { ThemeProvider } from './components/theme-provider.tsx'
 import Quiz from './routes/Quiz.tsx'
 import QuizLayout from './layouts/QuizLayout.tsx'
 import { QuizProvider } from './context/QuizContext.tsx'
+import SubmitResults from './routes/SubmitResults.tsx'
+import ErrorPage from './routes/ErrorPage.tsx'
 
 createRoot(document.getElementById('root')!).render(
    <StrictMode>
@@ -22,8 +24,10 @@ createRoot(document.getElementById('root')!).render(
                   {/* Add more routes here as needed */}
                   <Route path='quiz' element={<QuizLayout />}>
                      <Route path=':quizId' element={<Quiz />} />
+                     <Route path='submit-results' element={<SubmitResults />} />
+                     {/* <Route path='/quiz/' element={<ErrorPage />} /> */}
                   </Route>
-                  <Route path='*' element={<div>404 Not Found</div>} />
+                  <Route path='*' element={<ErrorPage />} />
                </Routes>
             </BrowserRouter>
          </QuizProvider>

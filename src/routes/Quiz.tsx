@@ -15,14 +15,18 @@ const Quiz = () => {
    const asideRef = useRef<HTMLElement>(null)
    const submitRef = useRef<HTMLButtonElement>(null)
    const { quizId } = useParams<{ quizId: string }>()
+   
    useEffect(() => {
+      if (quizId && +quizId > 11 && answeredQuestions === 11) {
+         navigate('/quiz/submit-results', { replace: true })
+      }
       if (quizId && +quizId <= answeredQuestions) {
          navigate(`/quiz/${answeredQuestions + 1}`, { replace: true })
       }
    // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [quizId])
    if (!quizId) {
-      return <div>Keine ID vorzufinden.</div>
+      return <div className="text-brand">Keine ID vorzufinden.</div>
    }
    const { questions } = myData
    const quiz = questions.find((q) => q.id === +quizId) as QuizType
