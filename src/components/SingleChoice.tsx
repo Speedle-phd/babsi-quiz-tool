@@ -111,30 +111,7 @@ const SingleChoice = ({
                                  </FormLabel>
                               </FormItem>
                            ))}
-                           {/* <FormItem className='flex items-center gap-3'>
-                              <FormControl>
-                                 <RadioGroupItem value='all' />
-                              </FormControl>
-                              <FormLabel className='font-normal'>
-                                 All new messages
-                              </FormLabel>
-                           </FormItem>
-                           <FormItem className='flex items-center gap-3'>
-                              <FormControl>
-                                 <RadioGroupItem value='mentions' />
-                              </FormControl>
-                              <FormLabel className='font-normal'>
-                                 Direct messages and mentions
-                              </FormLabel>
-                           </FormItem>
-                           <FormItem className='flex items-center gap-3'>
-                              <FormControl>
-                                 <RadioGroupItem value='none' />
-                              </FormControl>
-                              <FormLabel className='font-normal'>
-                                 Nothing
-                              </FormLabel>
-                           </FormItem> */}
+                           
                         </RadioGroup>
                      </FormControl>
                      <FormMessage />

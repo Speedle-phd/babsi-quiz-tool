@@ -29,9 +29,11 @@ const LandingPageCard = () => {
             </Link>
          </CardContent>
          <CardFooter className='flex justify-center'>
-            <Button className='bg-brand' size='sm'>
-               Zur Rangliste
-            </Button>
+            <Link to="/rankings">
+               <Button className='bg-brand' size='sm'>
+                  Zur Rangliste
+               </Button>
+            </Link>
          </CardFooter>
       </Card>
    )

@@ -10,6 +10,7 @@ import QuizLayout from './layouts/QuizLayout.tsx'
 import { QuizProvider } from './context/QuizContext.tsx'
 import SubmitResults from './routes/SubmitResults.tsx'
 import ErrorPage from './routes/ErrorPage.tsx'
+import Rankings from './routes/Rankings.tsx'
 
 createRoot(document.getElementById('root')!).render(
    <StrictMode>
@@ -19,6 +20,7 @@ createRoot(document.getElementById('root')!).render(
                <Routes>
                   <Route path='/' element={<AppLayout />}>
                      <Route index element={<App />} />
+                     <Route path="rankings" element={<Rankings />} />
                      {/* You can add more nested routes here if needed */}
                   </Route>
                   {/* Add more routes here as needed */}
