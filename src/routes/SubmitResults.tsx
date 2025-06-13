@@ -76,7 +76,10 @@ const SubmitResults = () => {
          setSubmitted(true)
          resetAnsweredQuestions()
          resetScore()
-         navigate('http://localhost:5173', { replace: true })
+         // navigate('http://localhost:5173', { replace: true })
+         navigate('https://lighthearted-tapioca-814929.netlify.app', {
+            replace: true,
+         })
 
       } catch (error) {
          console.log('Error submitting results:', error)
